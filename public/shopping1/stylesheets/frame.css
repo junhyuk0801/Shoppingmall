@@ -1,0 +1,55 @@
+#sidebar {
+    position: fixed;
+    transition: left 0.3s;
+}
+
+#center {
+    width:100vw;
+    position: absolute;
+    transition: left 0.3s;
+}
+
+.nav {
+    position: fixed;
+    width: 100vw;
+}
+
+#topbar {
+    border-bottom: 2px lightgreen solid;
+    text-align: center;
+    height: 4.5vh;
+}
+
+#bottombar {
+    display: table;
+    border-top : 2px lightgreen solid;
+    height: 13vh;
+    min-height: 80px;
+    bottom: 0;
+}
+
+#bottombar div {
+    position: absolute;
+    display : flex;
+    width: 32vw;
+    height: 10vh;
+    border: 2px lightgreen solid;
+    bottom: 1vh;
+    justify-content: center;
+    align-items: center;
+}
+
+div #quantity {
+    display: inline-block;
+    border: none;
+    width: 10vw;
+}
+
+#quantity button {
+    background-color: lightgreen;
+    border: lightgreen 2px solid;
+    width: 10vw;
+    height: 3vh;
+    text-align: center;
+}
+

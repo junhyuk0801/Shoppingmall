@@ -1,0 +1,131 @@
+<% if (display) { %>
+
+    <link rel="stylesheet" href='/shopping1/stylesheets/payment.css'>
+
+    <div class="box">
+        <span class="front">구매자 정보</span><br>
+        <table>
+            <tr>
+                <td class="header"> 이름 </td> <td> 홍길동 </td>
+            </tr>
+            <tr>
+                <td class="header"> 이메일 </td> <td> hongkildong@email.com </td>
+            </tr>
+            <tr>
+                <td class="header"> 휴대폰 번호 </td> <td> 010-1234-5678 </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="box">
+        <span class="front">배송지 정보</span> &nbsp; <button onclick="showModal();">배송지 입력</button>   <br>
+
+        <table>
+            <tr>
+                <td class="header"> 주소 </td> <td id="deliverAddress"> <%= address %> </td>
+            </tr>
+            
+            <tr>
+                <td class="header"> 수령인 </td> <td> <input value="홍길동"> </td>
+            </tr>
+            <tr>
+                <td class="header"> 배송시 메모 </td>
+                <td>
+                    선택하세요잉<br>
+                    <select id="memo" style="width: 60vw;" onchange="detectUserInput()"> 
+                        <option value="배송 전에 미리 연락 바랍니다.">배송 전에 미리 연락 바랍니다.</option>
+                        <option value="부재시 경비실에 맡겨 주세요.">부재시 경비실에 맡겨 주세요.</option>
+                        <option value="부재시 전화 주시거나 문자 남겨 주세요.">부재시 전화 주시거나 문자 남겨 주세요.</option>
+                        <option value="부재시 문 앞에 놓아주세요.">부재시 문 앞에 놓아주세요.</option>
+                        <option value="직접 입력">직접 입력</option>
+                    </select>
+                    <input id="memoInput" style="display: none;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px" colspan=99> 이 주소를 다음 주문시에도 사용합니다 <input type="checkbox" id="useNext" checked style="width:10px;"></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="box">
+        <span class="front">결제 방법</span><br>
+
+        <table>
+            <tr>
+                <td class="header"> 상품 가격 </td> <td colspan="99" id="price"> <%= price %>원 </td>
+            </tr>
+            <tr>
+                <td class="header"> 배송비 </td> <td colspan="99"> 2500원 </td>
+            </tr>
+            <tr>
+                <td class="header"> 결제방법 </td> 
+                <td>
+                    <input style="width: 10px; margin-left: 10px; margin-right: 0px;" type="radio" name="pay" value="card" onfocus="detectCardType(true);" checked> <label for="choiceMethod1">신용카드</label>
+                    <input style="width: 10px; margin-left: 10px; margin-right: 0px;" type="radio" name="pay" value="deposit" onfocus="detectCardType(false);"> <label for="choiceMethod2">무통장입금</label>
+                    <select id="cardType" style="width: 60vw; display: block"> 
+                        <option value="카드 추가">카드 추가</option>
+                        <% for(let card in cards) { %>
+                            <option value> <%= card %> </option>
+                        <% } %>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <a href="#" onclick="pay()">
+        <div id="pay">
+            결제하기 
+        </div>
+    </a>
+
+    <div id="modal" class="searchModal">
+        <div class="search-modal-content">
+            <div class="page-header">
+                <h1>주소 설정</h1>
+            </div>
+            
+            <div class="box" style="margin-bottom: 0px;">
+                <span class="front">주소 검색</span><br>
+                <table>
+                    <tr>
+                        <td class="header"> 지번주소 </td> <td id="areaAdd">  </td>
+                    </tr>
+                    <tr>
+                        <td class="header"> 도로명주소 </td> <td id="roadAdd">  </td>
+                    </tr>
+                    <tr>
+                        <td class="header"> 상세주소 </td> <td> <input id="detailAdd" style="width:100%;" onkeyup="sumAddr();"> </td>
+                    </tr>
+                    <tr>
+                        <td colspan=99 style="text-align: center;"> 
+                            <div class='modalbtn' style="background-color: white; border: lightgreen 2px solid;" onClick="findAddr();">
+                                <span class="pop_bt modalCloseBtn" style="font-size: 13pt;">
+                                    우편번호 검색
+                                </span>
+                            </div>    
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="completeAdd" style="text-align: left; margin-bottom: 20px;"></div> 
+            <div class='modalbtn' style="background-color: lightgreen;" onClick="fillAddr();">
+                <span class="pop_bt modalCloseBtn" style="font-size: 13pt;">
+                    입력
+                </span>
+            </div>
+            <a>
+            <div class='modalbtn' onClick="closeModal();">
+                <span class="pop_bt modalCloseBtn" style="font-size: 13pt;">
+                    취소
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="/shopping1/javascripts/payment.js"></script>
+
+<% } else { %>
+    잘못된 접근이에용
+<% } %>

@@ -1,0 +1,17 @@
+{
+    "0" : {
+        "productName": "삼다수(작은병)",
+        "price": 500,
+        "description": "삼다수 작은병이에요잉"
+    },
+    "1": {
+        "productName": "삼다수(큰병)",
+        "price": 1200,
+        "description": "삼다수 큰병이에요잉"
+    },
+    "2": {
+        "productName": "삼다수(더럽게큰병)",
+        "price": 122200,
+        "description": "온세상 삼다수를 다 담았어요잉"
+    }
+}

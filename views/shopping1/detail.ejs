@@ -1,0 +1,31 @@
+<style>
+    #product {
+        text-align: left;
+    }
+
+    #keyImg {
+        width:90vw;
+        padding: 5vw;
+    }
+
+    #product span {
+        padding-left: 2vw;
+    }
+
+    #productName {
+        font-size: 24px;
+    }
+
+    #price {
+        font-size: 18px;
+        color: red;
+    }
+
+</style>
+<div id="product">
+    <img id="keyImg" src="<%= `/shopping1/products/${Id}.jpg` %>"><br>
+    <span id="productName"><%= Products[Id].productName %></span><br>
+    <span id="price"><%= Products[Id].price %></span>원<br>
+    <br><br>
+    <span id="description"><%= Products[Id].description %></span>
+</div>

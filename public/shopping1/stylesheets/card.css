@@ -1,0 +1,62 @@
+body {
+    text-align: center;
+}
+
+.section { 
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contents {
+    display: none;
+}
+
+.opened .contents {
+    display: block;
+}
+
+.title {
+    font-size: 15pt;
+    font-weight: 1000;
+    background-color: lightgray;
+    display: block;
+}
+.cardType {
+    font-size: 13pt;
+    padding: 3vw;
+    margin: 3px;
+    margin-bottom: 4px;
+    width: 22vw;
+    border: 2px darkgray solid;
+    text-align: center;
+    display: inline-block;
+}
+.selected {
+    border: 2px lightblue solid;
+}
+.dataInput {
+    margin:2px;
+    margin-bottom: 10px;
+    border: 2px darkgray solid;
+    padding: 5px;
+    display: inline-block;
+}
+.dataInput span {
+    font-size: 30px;
+}
+.dataInput {
+    text-align: left;
+}
+.dataInput div {
+    text-align: center;
+}
+.currentInput {
+    color: turquoise;
+}
+#pay {
+    font-size: 14pt;
+    display:inline-block;
+    padding: 30px;
+    width: 80px;
+    border: 3px lightgreen solid;
+}

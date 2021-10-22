@@ -1,0 +1,71 @@
+<% if(display) { %>
+    <style>
+        .box { 
+            margin-top : 10%;
+            border-bottom: 2px lightgray solid;
+            margin-bottom: 10%;
+            text-align: left;
+        }
+
+        .front {
+            border-left: 2px solid gray;
+            margin-left: 5px;
+            padding-left: 2px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 5%;
+            text-align: left;
+        }
+
+        .header {
+            width: 30%;
+            background-color: lightgray;
+            border-right: 2px solid gray;
+            text-align: right;
+            padding: 5%;
+        }
+
+        .btn {
+            width: 30%;
+            display: inline-block;
+            border: 2px solid black;
+            margin: 10px;
+            padding: 5%;
+            padding-top: 8%;
+            padding-bottom: 8%;
+        }
+        
+    </style>
+    <div class="box">
+        <span class="front">결제가 완료되었습니다</span><br>
+        <table>
+            <tr>
+                <td class="header"> 결제금액 </td> <td> <%= paymentData.price %> </td>
+            </tr>
+            <tr>
+                <td class="header"> 결제방법 </td> <td> <%= paymentData.pay %> </td>
+            </tr>
+            <tr>
+                <td class="header"> 배송 주소 </td> <td> <%= paymentData.address %> </td>
+            </tr>
+        </table>
+    </div>
+    <a href="/shopping1">
+        <div class='btn' style="border: 2px solid lightgreen;">
+            상품목록
+        </div>
+    </a>
+    <a href="/">
+        <div class='btn'>
+            초기화면
+        </div>
+    </a>
+    
+<% } else { %>
+    잘못된 접근입니다잉
+<% } %>

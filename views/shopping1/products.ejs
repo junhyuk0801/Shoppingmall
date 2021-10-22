@@ -1,0 +1,23 @@
+<style>
+.product {
+    display: inline-block;
+    width: 110px;
+    height: 175px;
+    border: rgb(0, 0, 0) 1px solid;
+    margin: 25px;
+    text-align: center;
+}
+.product img {
+    width: 105px;
+    height: 105px;
+}
+</style>
+<% for(let productKey in Products) { %>
+    <div class="product">
+        <a href="/shopping1/products/<%= productKey %>">
+            <img src="<%= `/shopping1/products/${productKey}.jpg` %>">
+            <%= Products[productKey].productName %><br>
+            <%= Products[productKey].price %>
+        </a>
+    </div>
+<% } %>

@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/shopping1/stylesheets/basket.css">
+<% if(display) { %>
+    <table class="basket"> 
+        <thead>
+            <tr>
+                <td colspan=99; style="text-align: left; font-size: 24px; padding: 20px;">
+                    장바구니
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let item in basket) { %>
+                <tr> 
+                    <td rowspan=2 style="width:105px; height:105px;"> <img src="<%= `/shopping1/products/${item}.jpg` %>"> </td>
+                    <td colspan=3 style="height: 0%; border-bottom: 1px solid black;"> <%= Products[item].productName %> </td>
+                    <td rowspan=2 style="width: 30px;"> <a href="javascript:deleteItem(<%= item %>)">
+                        <div style="width: 20px; height: 20px;"> × </div> 
+                    </a> </td>
+                </tr>
+                <tr> 
+                    <td style="text-align: left"> <%= basket[item] %>개 </td>
+                    <td style="text-align: center"> <%= Products[item].price %>원 </td>
+                    <td style="text-align: right"> <%= Products[item].price * basket[item] %>원 </td>
+                </tr>
+            <% } %>
+            <tr>
+                <td colspan=99 style="border-top: 1px solid black; text-align: right; padding-bottom: 20px">
+                    <span id="total">
+                        <%= Object.keys(basket).reduce((acc, v) => acc + Products[v].price * basket[v], 0) %>
+                    </span>
+                    원
+                </td>
+            </tr>
+            <tr>
+                <td colspan=99 style="text-align: center;">
+                    <a href="javascript:payment();">
+                        <div id="pay">
+                             결제하기 
+                        </div>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="/shopping1/javascripts/basket.js"></script>
+<% } else { %>
+    암것도 안고름~
+<% } %>

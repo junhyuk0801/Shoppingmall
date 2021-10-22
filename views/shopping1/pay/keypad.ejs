@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang=ko>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+        <title>asd</title>
+        <style>
+            #keypad {
+                position: fixed;
+                bottom:0px;
+                left:0px;
+                width:100vw;
+                background-color: lightskyblue;
+                height: 40vh;
+                text-align: center;
+                transition: bottom 0.3s;
+            }
+            .keyBtn {
+                border: 2px solid turquoise;
+                width: 25vw;
+                height: 9vh;
+                vertical-align: middle;
+                font-size: 18pt;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <%- body %>
+        <nav id="keypad" onload="generateKeySet();" style="bottom:-40vh;">
+            <table style="width:100vw;">
+                <tbody>
+                    <tr>
+                        <td class="keyBtn">1</td>
+                        <td class="keyBtn">2</td>
+                        <td class="keyBtn">3</td>
+                    </tr>
+                    <tr>
+                        <td class="keyBtn">4</td>
+                        <td class="keyBtn">5</td>
+                        <td class="keyBtn">6</td>
+                    </tr>
+                    <tr>
+                        <td class="keyBtn">7</td>
+                        <td class="keyBtn">8</td>
+                        <td class="keyBtn">9</td>
+                    </tr>
+                    <tr>
+                        <td class="keyBtn"></td>
+                        <td class="keyBtn">0</td>
+                        <td class="keyBtn" data-number="-1">←</td>
+                    </tr>
+                </tbody>
+            </table>
+        </nav>
+    </body>
+    <script src="/shopping1/javascripts/keypad.js"></script>
+    <%- script %>
+</html>

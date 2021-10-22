@@ -1,0 +1,17 @@
+.basket {
+    width: 100vw;
+}
+
+.basket img {
+    width: 30vw;
+    height: 30vw;
+}
+
+#pay {
+    display : inline-flex;
+    width: 32vw;
+    height: 10vh;
+    border: 2px lightgreen solid;
+    justify-content: center;
+    align-items: center;
+}

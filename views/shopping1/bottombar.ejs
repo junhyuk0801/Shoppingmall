@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <title> asdasd </title>
+    <link rel="stylesheet" href='/shopping1/stylesheets/global.css'>
+    <link rel="stylesheet" href='/shopping1/stylesheets/frame.css'>
+</head>
+<body>
+    <div id="sidebar" style="left: -40vw;">
+    아아아
+    아아아
+    </div>
+    <div id="center" style="left:0vw">
+        <div class="nav" id="topbar">
+            <div id="menu" style="margin: 2px; text-align: left; position: absolute; top: 0vh; left: 0;">
+                <a href="#">
+                    <img src="/shopping1/images/menu.png" style="width: 4vh;">
+                </a>
+            </div>
+            <a href="/shopping1">
+                <div id="title" style="display:inline-block; font-size: 24px">
+                    GIeduTech Mall
+                </div>
+            </a>
+            <a href="/shopping1/basket">
+                <div id="basket" style="position: absolute; top: 1vh; right: 2vw; font-size: 11pt">
+                    장바구니
+                </div>
+            </a>
+        </div>
+        <div class="contents" style="padding-top: 5vh; text-align: center;">
+            <%- body %>
+        </div>
+        <div class="nav" id="bottombar">
+            <div id="quantity" style="left: 6%">
+                <button onclick="addAmount(1)">▲</button>
+                <input id="amount" value="1" style="width:8vw; height: 3vh; border: 1px white solid; text-align: center;">
+                <button onclick="addAmount(-1)">▼</button>
+            </div>
+            <a href="javascript:buy();">
+                <div style="background-color: rgb(75, 240, 100); right: 45%;">
+                    구매
+                </div>
+            </a>
+            <a href="javascript:addBasket();">
+                <div style="right: 5%;">
+                    장바구니
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="/shopping1/javascripts/frame.js"></script>
+<%- script %>
+</html>
+  
